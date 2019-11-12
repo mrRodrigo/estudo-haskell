@@ -33,4 +33,5 @@ myMapAux f1 f2 x y = [f1 x, f2 y]
 
 myMap :: (a -> b) -> (a -> b) -> [a] -> [b]
 myMap f1 f2 (x:y:xs) = ([f1 x, f2 y]++(myMap f1 f2 xs))
-myMap _ _ [] = [] 
+myMap _ _ [] = []
+myMap f1 _ (x:[]) = [f1 x]
